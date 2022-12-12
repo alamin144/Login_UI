@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:login_ui/navigator/bottom_navi.dart';
+import 'package:login_ui/navigator/order.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -104,12 +106,20 @@ class _HomePageState extends State<HomePage> {
                       )),
                 ),
               ),
+              SizedBox(
+                height: 10,
+              ),
               Center(
                   child: ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(Colors.red),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Bar()),
+                        );
+                      },
                       child: Text("Sign In")))
             ],
           ),
